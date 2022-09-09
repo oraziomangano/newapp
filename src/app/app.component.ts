@@ -57,6 +57,11 @@ export class AppComponent {
         this.todoArray.splice(i, 1);
       }
 
+      export class KeyUpComponent_v3 {
+        value = '';
+        onEnter(value: string) { this.value = value; }
+      }
+
       /*todoSubmit(value:any){
         if(value!==""){
        this.todoArray.push(value.todo)
