@@ -41,13 +41,29 @@ export class AppComponent {
   todoArray: any = [];
   registerForm: any = [];
   submitted: any = [];
-
-  addTodo(value: any) {
-    let newItem = {
-      value: value,
-      createdAt: '2022-09-07'
-    };
-    this.todoArray.push(newItem);
+  // function ckInput(campo){
+  //    for(var i = 0;i<$('[id^="codice"]').length;i++)
+  //    var el = $('[id^="codice"]')[i];
+  //   if(el.value == campo.value && el.id != campo.id && el.value != ""){
+  //   return false;
+  //   }else {return true;}
+  //    }
+  //   function doppioni(){
+  //   for(var i = 0;i<$('[id^="codice"]').length;i++){
+  //  var el = $('[id^="codice"]')[i];
+  //  if (el.value != ""){
+  //  if(!ckInput(el)) {alert("Ci sono ripetizioni negli articoli inseriti"); return false;}
+  //  }else {return false;}
+  //   return true;
+  //  }
+  addTodo(casella: any) {
+    // let newItem = {
+    //   value: value,
+    //   createdAt: '2022-09-07'
+    // };
+    if (casella.length <= 5 || this.todoArray.includes(casella))
+    alert("la parola inserita è minore di 5 caratteri o già inserita")
+    else this.todoArray.push(casella);
     console.log(this.todoArray);
   }
 
@@ -55,11 +71,6 @@ export class AppComponent {
     for (let i = 0; i <= this.todoArray.length; i++) {
       if (todo == this.todoArray[i]) {
         this.todoArray.splice(i, 1);
-      }
-
-      export class KeyUpComponent_v3 {
-        value = '';
-        onEnter(value: string) { this.value = value; }
       }
 
       /*todoSubmit(value:any){
